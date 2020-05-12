@@ -1,0 +1,48 @@
+{
+  "name": "meli-item-search-api",
+  "version": "1.0.0",
+  "description": "A search API using MLA services",
+  "main": "app.js",
+  "scripts": {
+    "postinstall": "npm run tsc",
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' ./src/app.ts",
+    "start:server": "node ./build/src/app.js",
+    "ts-node": "ts-node",
+    "tsc": "tsc",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjpizarro/meli-search-API.git"
+  },
+  "author": "rjpizarro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rjpizarro/meli-search-API/issues"
+  },
+  "homepage": "https://github.com/rjpizarro/meli-search-API#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dot-prop-immutable": "^2.1.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/bcrypt": "^3.0.0",
+    "@types/cors": "^2.8.6",
+    "@types/dot-prop-immutable": "^1.5.1",
+    "@types/express": "^4.17.6",
+    "@types/jest": "^25.2.1",
+    "@types/lodash": "^4.14.150",
+    "babel-jest": "^25.4.0",
+    "jest": "^25.4.0",
+    "nodemon": "^2.0.3",
+    "ts-node": "^8.9.0"
+  }
+}
