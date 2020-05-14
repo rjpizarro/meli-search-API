@@ -8,10 +8,12 @@ import searchItemByQuery from '../../services/items/search-item-by-query'
 
 export default async (req: express.Request, res: express.Response, next: express.NextFunction) => {
     const query: string = _.get(req, 'query.q', '')
+    const limit: number = _.get(req, 'query.limit')
 
     try {
-        const searchResponse = await searchItemByQuery(query)
+        const searchResponse = await searchItemByQuery(query, { limit: limit })
         const results = _.get(searchResponse, 'results', [])
+
         const reducedItems = results.reduce((acc: any, item: any) => {
             const [integer, decimals] = decomposePrice(item.price)
 
