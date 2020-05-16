@@ -14,6 +14,7 @@ export default async (req: express.Request, res: express.Response, next: express
         const itemResponse = await getItemById(id)
         const itemDescriptionResponse = await getItemDescription(id)
         const [integer, decimals] = decomposePrice(itemResponse.price)
+        const picture = _.get(itemResponse, 'pictures.0.url') || itemResponse.thumbnail
 
         const response = {
             author: {
@@ -28,7 +29,7 @@ export default async (req: express.Request, res: express.Response, next: express
                     amount: Number(integer),
                     decimals: decimals ? Number(decimals) : 0
                 },
-                picture: itemResponse.thumbnail,
+                picture: picture,
                 condition: itemResponse.condition,
                 free_shipping: _.get(itemResponse, 'shipping.free_shipping'),
                 sold_quantity: itemResponse.sold_quantity,
