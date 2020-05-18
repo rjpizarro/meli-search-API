@@ -16,7 +16,7 @@ Requirements:
 ## Project Structure
 
 ```
-minesweeper-API
+meli-search-API
 ├── .env
 ├── babel.config.js
 ├── envConfig.js
